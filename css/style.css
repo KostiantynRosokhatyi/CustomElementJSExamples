@@ -1,0 +1,21 @@
+div.container {
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 0;
+    justify-content: center
+}
+
+footer {
+    position: fixed;
+    left: 0; bottom: 0;
+    padding: 10px;
+    background: #39b54a;
+    color: #fff;
+    width: 100%;
+}
+footer p {
+    text-align:center;
+    font-size: 1.5em;
+}
