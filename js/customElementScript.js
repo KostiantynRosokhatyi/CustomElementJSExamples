@@ -2,24 +2,19 @@
 class TypeFont extends HTMLElement {
     constructor(){
         super();
-        let b = document.getElementById("myP");
-        let a  =  b.getAttribute('font');
-        b.style.font = a;
+        let fontAttribute  =  this.getAttribute('font');
+        this.style.font = fontAttribute;
     }
-
 }
 customElements.define("my-font", TypeFont);
 
 /*   Change color text   */
-
 class textColor extends HTMLElement {
     constructor(){
         super();
-        let b = document.getElementById("myColor");
-        let a  =  b.getAttribute('color');
-        b.style.color = a;
+        let colorAttribute  =  this.getAttribute('color');
+        this.style.color = colorAttribute;
     }
-
 }
 customElements.define("my-color", textColor);
 
@@ -27,11 +22,9 @@ customElements.define("my-color", textColor);
 class myfontSize extends HTMLElement {
     constructor(){
         super();
-        let b = document.getElementById("myFontSize");
-        let a  =  b.getAttribute('font-size');
-        b.style.fontSize = a;
+        let fontSizeAttribute  =  this.getAttribute('font-size');
+        this.style.fontSize = fontSizeAttribute;
     }
-
 }
 customElements.define("my-font-size", myfontSize);
 
@@ -39,24 +32,20 @@ customElements.define("my-font-size", myfontSize);
 class myPicture extends HTMLElement {
     constructor(){
         super();
-        let b = document.getElementById("myPicture");
-        let a  =  b.getAttribute('src');
-        let myWidth  =  b.getAttribute('width');
-        let myHeight  =  b.getAttribute('height');
-
+        let pictureElement = this;
+        let srcAttribute  =  pictureElement.getAttribute('src');
+        let myWidthAttribute  =  pictureElement.getAttribute('width');
+        let myHeightAttribute  =  pictureElement.getAttribute('height');
 
         let img = new Image();
-
         img.onload = function() {
-            b.appendChild(img);
+            pictureElement.appendChild(img);
         };
 
-        img.style.height = myWidth;
-        img.style.width = myHeight;
-        img. src = a;
-
+        img.style.height = myHeightAttribute;
+        img.style.width = myWidthAttribute;
+        img. src = srcAttribute;
     }
-
 }
 customElements.define("my-picture", myPicture);
 
@@ -65,23 +54,18 @@ customElements.define("my-picture", myPicture);
 class myPosition extends HTMLElement {
     constructor(){
         super();
-        let b = document.getElementById("myPosition");
-        let left  =  b.getAttribute('left');
-        let right  =  b.getAttribute('right');
-        let top  =  b.getAttribute('top');
-        let bottom  =  b.getAttribute('bottom');
+        let leftAttribute  =  this.getAttribute('left');
+        let rightAttribute  =  this.getAttribute('right');
+        let topAttribute  =  this.getAttribute('top');
+        let bottomAttribute  =  this.getAttribute('bottom');
 
-        b.style.position = "absolute";
+        this.style.position = "absolute";
 
-        b.style.left=left;
-        b.style.right=right;
-        b.style.top=top;
-        b.style.bottom=bottom;
-
-
-
+        this.style.left = leftAttribute;
+        this.style.right = rightAttribute;
+        this.style.top = topAttribute;
+        this.style.bottom = bottomAttribute;
     }
-
 }
 customElements.define("my-position", myPosition);
 
@@ -90,42 +74,31 @@ customElements.define("my-position", myPosition);
 class myBackground extends HTMLElement {
     constructor(){
         super();
-        let b = document.getElementById("myBg");
-        let a  =  b.getAttribute('bg-color');
-        let c  =  b.getAttribute('border');
-        b.style.backgroundColor = a;
-        b.style.border= c;
-
+        let bgColorAttribute  =  this.getAttribute('bg-color');
+        let borderAttribute  =  this.getAttribute('border');
+        this.style.backgroundColor = bgColorAttribute;
+        this.style.border= borderAttribute;
     }
-
-
 }
 customElements.define("my-bg", myBackground);
 
 /*Create title tag*/
-
 class myTitle extends HTMLElement {
     constructor(){
         super();
-        let my_title = document.getElementById("myTitle").innerHTML;
+        let my_title = this.innerHTML;
         document.title = my_title;
-        document.getElementById("myTitle").style.display="none";
+        this.style.display="none";
     }
-
 }
 customElements.define("my-title", myTitle);
 
 /*New  tag like <br> tag*/
-
-
-
-
 class my_Br extends HTMLElement {
 
     constructor() {
         super();
-        document.getElementById("myBr").innerHTML = "<br>";
+        this.innerHTML = "<br>";
     }
-
 }
 customElements.define("my-br", my_Br);
